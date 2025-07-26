@@ -7,6 +7,7 @@ const taskSchema = new mongoose.Schema({
   submissionTime: { type: Date, default: Date.now },
   taskStatus: { type: String, default: "Pending" }, // "Pending", "Completed"
   taskPictureUrl: { type: String }, // upload pic URL
+  point: { type: Number, default: 0 },
 });
 
 module.exports = mongoose.model("Task", taskSchema);

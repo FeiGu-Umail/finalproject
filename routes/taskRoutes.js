@@ -48,7 +48,7 @@ router.post("/complete", async (req, res) => {
 
     // Retrieve task info to get point value
     const task = await Task.findById(taskId);
-    const points = task.point || 10;
+    const points = typeof task.point === "number" ? task.point : 10;
 
     // Add points to the user's total
     await User.findByIdAndUpdate(userId, { $inc: { total_points: points } });
