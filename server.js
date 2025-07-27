@@ -17,6 +17,11 @@ app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/tasks", taskRoutes);
 
+// Root Route – respond at "/"
+app.get("/", (req, res) => {
+  res.send("Backend is up and running!");
+});
+
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
