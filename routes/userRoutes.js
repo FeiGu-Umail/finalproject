@@ -3,6 +3,13 @@ const router = express.Router();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 
+const { registerUser, loginUser } = require('../controllers/userController');
+
+router.post('/register', registerUser);
+router.post('/login', loginUser);
+
+module.exports = router;
+
 // leaderboard
 
 // add a new user with hashed password
