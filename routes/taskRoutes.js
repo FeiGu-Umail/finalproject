@@ -30,7 +30,7 @@ router.post("/complete", async (req, res) => {
   const { userId, taskId } = req.body;
 
   try {
-    const today = new Date().toISOString().split("T")[0]; // 格式: "2025-07-24"
+    const today = new Date().toISOString().split("T")[0]; // format: "2025-07-24"
 
     // Check if the task has already been completed today
     const already = await TaskCompletion.findOne({
